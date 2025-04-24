@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thịt heo - FMarker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f6f6;
+    }
+
+    header {
+      background: #000;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      color: white;
+
+      
+    }
+    .search-container {
+      position: relative;
+    }
+
+    .search-icon {
+      color: white;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .navbar {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar strong {
+      color: rgb(15, 219, 49);
+      font-family: Satisfy;
+      font-style: italic;
+      font-size: 45px; 
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .banner {
+      background-image: url('thitheo.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b6e440;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .breadcrumbs {
+      text-align: center;
+      font-size: 18px;
+      color: white;
+      margin-top: -40px;
+    }
+
+    .content {
+      display: flex;
+      width: 90%;
+      margin: 40px auto;
+    }
+
+    .sidebar {
+      width: 20%;
+    }
+
+    .sidebar h3 {
+  background: #cde623;
+  color:black; 
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center; /* Căn giữa chữ */
+}
+
+    .sidebar ul {
+      list-style: none;
+      background: white;
+      padding: 15px;
+    }
+
+    .sidebar ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .sidebar ul li strong {
+    color: #cde623; 
+    }
+    .sidebar ul li:hover {
+    color: #cde623; 
+    cursor: pointer;
+    }
+    
+
+    .products {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 40px 0;
+    }
+
+    .product-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    width: 250px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+
+    .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+    .product-card:hover {
+      transform: scale(1.1);
+    }
+
+    .product-link {
+  display: inline-block;
+  background-color: #b0d81f;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.product-link:hover {
+  background-color: #e86060b5;
+}
+
+.dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #040404;
+      min-width: 150px;
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-menu a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #2e7d32;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+        <div><strong>FMarket</strong></div>
+        <nav>
+          <a href="#">Trang chủ</a>
+          <a href="#">Giới thiệu</a>
+            <div class="dropdown">
+              <a href="#">Sản phẩm</a>
+              <div class="dropdown-menu">
+                <a href="#">Thịt bò</a>
+                <a href="#">Thịt heo</a>
+                <a href="#">Thịt cừu</a>
+                <a href="#">Cá hồi</a>
+                <a href="#">Thủy hải sản</a>
+                <a href="#">Golden Wagyu</a>
+                <a href="#">Sản phẩm khác</a>
+              </div>
+            </div>
+            <a href="#">Hệ thống phân phối</a>
+          <a href="#">Liên hệ</a>
+        </nav>
+        <div class="search-container" id="searchContainer">
+          <span class="material-icons search-icon" id="searchIcon">search</span>
+        </div>
+      </div>
+  </header>
+
+  <div class="banner">
+    <div>
+      <div style="font-size: 48px; font-weight: bold; color: #b6e440;">THỊT HEO</div>
+      <div class="breadcrumbs" style="color: white; margin-top: 10px; font-size: 18px;">
+        Trang chủ / Thịt Heo
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="sidebar">
+      <h3>DANH MỤC</h3>
+      <ul>
+        <li>Thịt bò</li>
+        <li><strong>Thịt heo</strong></li>
+        <li>Thịt cừu</li>
+        <li>Cá hồi</li>
+        <li>Thủy hải sản</li>
+        <li>Khoai tây</li>
+        <li>Sản phẩm khác</li>
+      </ul>
+    </div>
+
+    <div class="products">
+        <div class="product-card">
+            <img src="suoncanhbuomheo.jpg" alt="Sườn cánh buồm heo">
+            <a href="#" class="product-link">Xem chi tiết</a>
+          </div>
+          
+          <div class="product-card">
+            <img src="nacvaiheo.jpg" alt="Thịt nạc vai heo">
+            <a href="#" class="product-link">Xem chi tiết</a>
+          </div>
+          
+          <div class="product-card">
+            <img src="bachiheokoda.jpg" alt="Ba chỉ heo không da">
+            <a href="#" class="product-link">Xem chi tiết</a>
+          </div>
+          
+          <div class="product-card">
+            <img src="bachiheocoda.jpg" alt="Ba chỉ heo có da">
+            <a href="#" class="product-link">Xem chi tiết</a>
+          </div>
+          
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FMarket. All rights reserved.</p>
+    <p>Email: contact@fmarket.vn | Hotline: 0123 456 789</p>
+    
+  </footer>
+  
+
+  <script>
+    const searchIcon = document.getElementById('searchIcon');
+    const searchContainer = document.getElementById('searchContainer');
+    let searchInput = null;
+  
+    searchIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+  
+      if (!searchInput) {
+        searchInput = document.createElement('input');
+        searchInput.type = 'text';
+        searchInput.placeholder = 'Tìm kiếm...';
+        searchInput.className = 'search-input';
+  
+        // Style cho input
+        Object.assign(searchInput.style, {
+          position: 'absolute',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          right: '35px',
+          padding: '6px 12px',
+          borderRadius: '20px',
+          border: 'none',
+          outline: 'none',
+          fontSize: '14px',
+          transition: 'opacity 0.3s ease',
+          zIndex: 1000
+        });
+  
+        searchContainer.appendChild(searchInput);
+        searchInput.focus();
+      }
+    });
+  
+    // Ẩn khi click ra ngoài
+    document.addEventListener('click', (e) => {
+      if (searchInput && !searchContainer.contains(e.target)) {
+        searchInput.remove();
+        searchInput = null;
+      }
+    });
+  </script>
+  
+  
+  
+</body>
+</html>
+
+
