@@ -1,0 +1,342 @@
+<!DOCTYPE HTML> 
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thủy hải sản - FMarker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6f6f6;
+    }
+
+    header {
+      background: #000;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      color: white;
+    }
+
+    .navbar {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar strong {
+      color: rgb(15, 219, 49);
+      font-family: Satisfy, cursive;
+      font-style: italic;
+      font-size: 45px; 
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #040404;
+      min-width: 150px;
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-menu a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #2e7d32;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    .search-container {
+      position: relative;
+    }
+
+    .search-icon {
+      color: white;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .banner {
+      background-image: url('haii.png');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #b6e440;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .breadcrumbs {
+      color: white;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .content {
+      display: flex;
+      width: 90%;
+      margin: 40px auto;
+    }
+
+    .sidebar {
+      width: 20%;
+    }
+
+    .sidebar h3 {
+      background: #cde623;
+      color: black; 
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      background: white;
+      padding: 15px;
+    }
+
+    .sidebar ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .sidebar ul li:hover,
+    .sidebar ul li strong {
+      color: #cde623; 
+      cursor: pointer;
+    }
+
+    .products {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .product-card-horizontal {
+      background: white;
+      display: flex;
+      gap: 24px;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card-horizontal:hover {
+      transform: scale(1.015);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card-horizontal img {
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .product-card-horizontal .info {
+      flex: 1;
+    }
+
+    .product-card-horizontal .info h3 {
+      font-size: 22px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .product-card-horizontal .info p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-card-horizontal {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .product-card-horizontal img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar">
+      <div><strong>FMarket</strong></div>
+      <nav>
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <div class="dropdown">
+          <a href="#">Sản phẩm</a>
+          <div class="dropdown-menu">
+            <a href="#">Thịt Bò</a>
+            <a href="#">Thịt heo</a>
+            <a href="#">Thịt cừu</a>
+            <a href="#">Cá hồi</a>
+            <a href="#">Thủy hải sản</a>
+            <a href="#">Golden Wagyu</a>
+            <a href="#">Sản phẩm khác</a>
+          </div>
+        </div>
+        <a href="#">Hệ thống phân phối</a>
+        <a href="#">Liên hệ</a>
+      </nav>
+      <div class="search-container" id="searchContainer">
+        <span class="material-icons search-icon" id="searchIcon">search</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="banner">
+    <div>THỦY HẢI SẢN</div>
+    <div class="breadcrumbs">Trang chủ / THỦY HẢI SẢN</div>
+  </div>
+
+  <div class="content">
+    <div class="sidebar">
+      <h3>DANH MỤC</h3>
+      <ul>
+        <li>Thịt bò</li>
+        <li>Thịt heo</li>
+        <li>Thịt cừu</li>
+        <li>Cá hồi</li>
+        <li><strong>Thủy hải sản</strong></li>
+        <li>Khoai tây</li>
+        <li>Sản phẩm khác</li>
+      </ul>
+    </div>
+    <div class="products">
+      <div class="product-card-horizontal">
+        <img src="muc.webp" alt="Mực">
+        <div class="info">
+          <h3>Mực tươi</h3>
+          <p>Mực tươi, săn chắc, thích hợp cho món chiên và hấp. Hương vị đậm đà, giàu dinh dưỡng.</p>
+        </div>
+      </div>
+      <div class="product-card-horizontal">
+        <img src="tomhum.webp" alt="Tôm hùm">
+        <div class="info">
+          <h3>Tôm hùm Alaska</h3>
+          <p>Tôm hùm loại lớn, thịt ngọt đậm, được tuyển chọn từ vùng biển lạnh Alaska, nhiều đạm, ít béo.</p>
+        </div>
+      </div>
+      <div class="product-card-horizontal">
+        <img src="cangu1.jpg" alt="Cá ngừ">
+        <div class="info">
+          <h3>Cá ngừ đại dương</h3>
+          <p>Cá ngừ đại dương loại 1, giàu Omega-3, thịt mềm, đỏ tươi, phù hợp làm sashimi hoặc nướng.</p>
+        </div>
+      </div>
+      <div class="product-card-horizontal">
+        <img src="cua.jpg" alt="Cua biển">
+        <div class="info">
+          <h3>Cua biển</h3>
+          <p>Cua thịt loại lớn, chắc, tươi sống, được đánh bắt trong ngày, thích hợp hấp bia hoặc rang me.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 FreshFood. All rights reserved.</p>
+    <p>Email: contact@freshfood.vn | Hotline: 0123 456 789</p>
+  </footer>
+
+  <script>
+    const searchIcon = document.getElementById('searchIcon');
+    const searchContainer = document.getElementById('searchContainer');
+    let inputExists = false;
+
+    searchIcon.addEventListener('click', () => {
+      if (!inputExists) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Tìm kiếm...';
+        input.className = 'search-input';
+        input.style.position = 'absolute';
+        input.style.top = '50%';
+        input.style.transform = 'translateY(-50%)';
+        input.style.right = '35px';
+        input.style.padding = '6px 12px';
+        input.style.borderRadius = '20px';
+        input.style.border = 'none';
+        input.style.outline = 'none';
+        input.style.fontSize = '14px';
+        searchContainer.appendChild(input);
+        input.focus();
+        inputExists = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
