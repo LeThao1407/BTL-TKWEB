@@ -30,12 +30,49 @@
     }
     .search-container {
       position: relative;
+      display: flex;
+      align-items: center;
     }
 
     .search-icon {
       color: white;
       font-size: 26px;
       cursor: pointer;
+    }
+
+    .search-input {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: none;
+      font-size: 14px;
+      margin-left: 10px;
+      display: none;
+      width: 200px;
+    }
+
+    .suggestions-box {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+      display: none;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      border-radius: 5px;
+    }
+
+    .suggestion-item {
+      padding: 10px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .suggestion-item:hover {
+      background-color: #f0f0f0;
     }
 
     .navbar {
@@ -126,6 +163,10 @@
       gap: 25px;
       padding: 40px 0;
     }
+    .product-card p{
+      margin-top: 10px;
+      color: #2e7d32;
+    }
 
     .product-card {
     background: white;
@@ -160,8 +201,8 @@
   display: inline-block;
   background-color: #b0d81f;
   color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 5px 8px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
@@ -170,6 +211,7 @@
 .product-link:hover {
   background-color: #e86060b5;
 }
+
 
 .dropdown {
       position: relative;
@@ -205,13 +247,49 @@
       display: flex;
     }
 
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
-    }
+
+footer {
+  background: #333;
+  padding: 30px 0;
+  color: white;
+}
+
+.footer-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-info {
+  max-width: 60%;
+  font-size: 16px;
+}
+
+.footer-map {
+  max-width: 35%;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid white;
+  /* Xóa top, right, z-index nếu không cần thiết */
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.logo-img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -221,6 +299,7 @@
         flex-direction: column;
         align-items: center;
       }
+
     }
 
   </style>
@@ -250,6 +329,8 @@
         </nav>
         <div class="search-container" id="searchContainer">
           <span class="material-icons search-icon" id="searchIcon">search</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm...">
+          <div id="suggestionsBox" class="suggestions-box"></div>
         </div>
       </div>
   </header>
@@ -280,73 +361,130 @@
     <div class="products">
         <div class="product-card">
             <img src="suoncanhbuomheo.jpg" alt="Sườn cánh buồm heo">
-            <a href="#" class="product-link">Xem chi tiết</a>
+            <p> <strong>Sườn cánh buồm heo</strong></p>
+            <a href="#" class="product-link">Chi tiết</a>
           </div>
           
           <div class="product-card">
             <img src="nacvaiheo.jpg" alt="Thịt nạc vai heo">
-            <a href="#" class="product-link">Xem chi tiết</a>
+            <p><strong>Nạc vai heo</strong></p>
+            <a href="#" class="product-link">Chi tiết</a>
           </div>
           
           <div class="product-card">
             <img src="bachiheokoda.jpg" alt="Ba chỉ heo không da">
-            <a href="#" class="product-link">Xem chi tiết</a>
+            <p><strong> Ba chỉ heo không da</strong></p>
+            <a href="#" class="product-link">Chi tiết</a>
           </div>
           
           <div class="product-card">
             <img src="bachiheocoda.jpg" alt="Ba chỉ heo có da">
-            <a href="#" class="product-link">Xem chi tiết</a>
+            <p><strong>Ba chỉ heo có da</strong></p>
+            <a href="#" class="product-link">Chi tiết</a>
           </div>
           
     </div>
   </div>
 
+
+  
+
   <footer>
-    <p>&copy; 2025 FMarket. All rights reserved.</p>
-    <p>Email: contact@fmarket.vn | Hotline: 0123 456 789</p>
-    
+    <div class="footer-container">
+      
+      <div class="footer-logo">
+        <img src="logo.png" alt="FMarket Logo" class="logo-img" />
+        <p>Chuyên cung cấp thực phẩm tươi sạch, an toàn và chất lượng.</p>
+      </div>
+  
+  
+      <div class="footer-contact">
+        <h4>Kết nối với chúng tôi</h4>
+        <p>Email: contact@fmarket.vn | Hotline: 0123 456 789</p>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5980586698183!2d105.82612117503089!3d21.008743180635605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac800f450807%3A0x419a49bcd94b693a!2zSOG7jWMgVmnhu4duIE5nw6JuIEjDoG5n!5e0!3m2!1svi!2s!4v1745586447209!5m2!1svi!2s" 
+          width="250" 
+          height="250" 
+          style="border:0; border-radius: 12px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+
+          </iframe>
+        </div>
+      </div>
+  
+    </div>
   </footer>
+  
+
+
+
+  
+  
   
 
   <script>
     const searchIcon = document.getElementById('searchIcon');
     const searchContainer = document.getElementById('searchContainer');
-    let searchInput = null;
-  
+    const searchInput = document.getElementById('searchInput');
+    const suggestionsBox = document.getElementById('suggestionsBox');
+    
+    // Dữ liệu gợi ý
+    const suggestions = [
+      "Thịt heo cốt lết",
+      "Thịt heo ba chỉ",
+      "Thịt heo xay",
+      "Sườn cánh buồm heo",
+      "Thịt heo nạc vai",
+      "Thịt heo không da",
+      "Thịt heo có da"
+    ];
+
     searchIcon.addEventListener('click', (e) => {
       e.stopPropagation();
-  
-      if (!searchInput) {
-        searchInput = document.createElement('input');
-        searchInput.type = 'text';
-        searchInput.placeholder = 'Tìm kiếm...';
-        searchInput.className = 'search-input';
-  
-        // Style cho input
-        Object.assign(searchInput.style, {
-          position: 'absolute',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          right: '35px',
-          padding: '6px 12px',
-          borderRadius: '20px',
-          border: 'none',
-          outline: 'none',
-          fontSize: '14px',
-          transition: 'opacity 0.3s ease',
-          zIndex: 1000
-        });
-  
-        searchContainer.appendChild(searchInput);
-        searchInput.focus();
-      }
+      searchInput.style.display = 'inline-block'; // Hiển thị ô nhập liệu
+      searchInput.focus(); // Đặt con trỏ vào ô tìm kiếm
     });
-  
-    // Ẩn khi click ra ngoài
+
+    searchInput.addEventListener('input', () => {
+      const inputText = searchInput.value.toLowerCase();
+      
+      if (inputText === '') {
+        suggestionsBox.style.display = 'none'; // Ẩn gợi ý nếu ô tìm kiếm trống
+        return;
+      }
+
+      const filteredSuggestions = suggestions.filter(suggestion =>
+        suggestion.toLowerCase().includes(inputText)
+      );
+
+      if (filteredSuggestions.length === 0) {
+        suggestionsBox.style.display = 'none'; // Ẩn nếu không có kết quả nào
+        return;
+      }
+
+      // Hiển thị các gợi ý
+      suggestionsBox.style.display = 'block';
+      suggestionsBox.innerHTML = ''; // Xóa gợi ý cũ
+
+      filteredSuggestions.forEach(suggestion => {
+        const div = document.createElement('div');
+        div.classList.add('suggestion-item');
+        div.textContent = suggestion;
+        div.onclick = () => {
+          searchInput.value = suggestion; // Điền vào ô tìm kiếm
+          suggestionsBox.style.display = 'none'; // Ẩn gợi ý
+        };
+        suggestionsBox.appendChild(div);
+      });
+    });
+
+    // Đóng hộp gợi ý khi click ra ngoài
     document.addEventListener('click', (e) => {
-      if (searchInput && !searchContainer.contains(e.target)) {
-        searchInput.remove();
-        searchInput = null;
+      if (!searchContainer.contains(e.target)) {
+        searchInput.style.display = 'none';
+        suggestionsBox.style.display = 'none';
       }
     });
   </script>
@@ -355,5 +493,3 @@
   
 </body>
 </html>
-
-
