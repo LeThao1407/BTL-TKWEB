@@ -28,6 +28,10 @@
 
       
     }
+    a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: inherit; /* Không đổi màu chữ */
+  }
     .search-container {
       position: relative;
       display: flex;
@@ -39,7 +43,6 @@
       font-size: 26px;
       cursor: pointer;
     }
-
     .search-input {
       padding: 6px 12px;
       border-radius: 20px;
@@ -49,7 +52,6 @@
       display: none;
       width: 200px;
     }
-
     .suggestions-box {
       position: absolute;
       top: 100%;
@@ -64,17 +66,14 @@
       z-index: 1000;
       border-radius: 5px;
     }
-
     .suggestion-item {
       padding: 10px;
       cursor: pointer;
       color: #333;
     }
-
     .suggestion-item:hover {
       background-color: #f0f0f0;
     }
-
     .navbar {
       width: 90%;
       margin: auto;
@@ -82,21 +81,18 @@
       justify-content: space-between;
       align-items: center;
     }
-
     .navbar strong {
       color: rgb(15, 219, 49);
       font-family: Satisfy;
       font-style: italic;
       font-size: 45px; 
     }
-
     .navbar a {
       color: white;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
-
     .banner {
       background-image: url('thitheo.jpg');
       background-size: cover;
@@ -109,24 +105,20 @@
       font-size: 48px;
       font-weight: bold;
     }
-
     .breadcrumbs {
       text-align: center;
       font-size: 18px;
       color: white;
       margin-top: -40px;
     }
-
     .content {
       display: flex;
       width: 90%;
       margin: 40px auto;
     }
-
     .sidebar {
       width: 20%;
     }
-
     .sidebar h3 {
   background: #cde623;
   color:black; 
@@ -135,13 +127,11 @@
   font-weight: bold;
   text-align: center; /* Căn giữa chữ */
 }
-
     .sidebar ul {
       list-style: none;
       background: white;
       padding: 15px;
     }
-
     .sidebar ul li {
       padding: 10px;
       border-bottom: 1px solid #ddd;
@@ -153,8 +143,6 @@
     color: #cde623; 
     cursor: pointer;
     }
-    
-
     .products {
       width: 100%;
       display: flex;
@@ -167,7 +155,6 @@
       margin-top: 10px;
       color: #2e7d32;
     }
-
     .product-card {
     background: white;
     border-radius: 16px;
@@ -183,8 +170,6 @@
     border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-
-
     .product-card img {
     width: 100%;
     height: 180px;
@@ -192,11 +177,9 @@
     border-radius: 12px;
     margin-bottom: 15px;
 }
-
     .product-card:hover {
       transform: scale(1.1);
     }
-
     .product-link {
   display: inline-block;
   background-color: #b0d81f;
@@ -207,12 +190,9 @@
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-
 .product-link:hover {
   background-color: #e86060b5;
 }
-
-
 .dropdown {
       position: relative;
       display: inline-block;
@@ -240,14 +220,12 @@
     }
 
     .dropdown-menu a:hover {
-      background-color: #2e7d32;
+      color: #2e7d32;
     }
 
     .dropdown:hover .dropdown-menu {
       display: flex;
     }
-
-
 footer {
   background: #333;
   padding: 30px 0;
@@ -310,16 +288,16 @@ footer {
     <div class="navbar">
         <div><strong>FMarket</strong></div>
         <nav>
-          <a href="#">Trang chủ</a>
+          <a href="index.html">Trang chủ</a>
           <a href="#">Giới thiệu</a>
             <div class="dropdown">
               <a href="#">Sản phẩm</a>
               <div class="dropdown-menu">
-                <a href="#">Thịt bò</a>
+                <a href="ThitBo.html">Thịt bò</a>
                 <a href="#">Thịt heo</a>
                 <a href="#">Thịt cừu</a>
                 <a href="#">Cá hồi</a>
-                <a href="#">Thủy hải sản</a>
+                <a href="btl.html">Thủy hải sản</a>
                 <a href="#">Golden Wagyu</a>
                 <a href="#">Sản phẩm khác</a>
               </div>
@@ -339,7 +317,7 @@ footer {
     <div>
       <div style="font-size: 48px; font-weight: bold; color: #b6e440;">THỊT HEO</div>
       <div class="breadcrumbs" style="color: white; margin-top: 10px; font-size: 18px;">
-        Trang chủ / Thịt Heo
+        TRANG CHỦ / THỊT HEO 
       </div>
     </div>
   </div>
@@ -348,11 +326,11 @@ footer {
     <div class="sidebar">
       <h3>DANH MỤC</h3>
       <ul>
-        <li>Thịt bò</li>
-        <li><strong>Thịt heo</strong></li>
+        <li><a href="ThitBo.html">Thịt bò</a></li>
+        <li><a href="thitheo.html"><strong>Thịt heo</strong></a></li>
         <li>Thịt cừu</li>
         <li>Cá hồi</li>
-        <li>Thủy hải sản</li>
+        <li><a href="btl.html">Thủy hải sản</a></li>
         <li>Khoai tây</li>
         <li>Sản phẩm khác</li>
       </ul>
@@ -385,19 +363,12 @@ footer {
           
     </div>
   </div>
-
-
-  
-
   <footer>
     <div class="footer-container">
-      
       <div class="footer-logo">
         <img src="logo.png" alt="FMarket Logo" class="logo-img" />
         <p>Chuyên cung cấp thực phẩm tươi sạch, an toàn và chất lượng.</p>
       </div>
-  
-  
       <div class="footer-contact">
         <h4>Kết nối với chúng tôi</h4>
         <p>Email: contact@fmarket.vn | Hotline: 0123 456 789</p>
@@ -409,27 +380,17 @@ footer {
           allowfullscreen="" 
           loading="lazy" 
           referrerpolicy="no-referrer-when-downgrade">
-
           </iframe>
         </div>
       </div>
   
     </div>
   </footer>
-  
-
-
-
-  
-  
-  
-
   <script>
     const searchIcon = document.getElementById('searchIcon');
     const searchContainer = document.getElementById('searchContainer');
     const searchInput = document.getElementById('searchInput');
     const suggestionsBox = document.getElementById('suggestionsBox');
-    
     // Dữ liệu gợi ý
     const suggestions = [
       "Thịt heo cốt lết",
@@ -458,12 +419,10 @@ footer {
       const filteredSuggestions = suggestions.filter(suggestion =>
         suggestion.toLowerCase().includes(inputText)
       );
-
       if (filteredSuggestions.length === 0) {
         suggestionsBox.style.display = 'none'; // Ẩn nếu không có kết quả nào
         return;
       }
-
       // Hiển thị các gợi ý
       suggestionsBox.style.display = 'block';
       suggestionsBox.innerHTML = ''; // Xóa gợi ý cũ
@@ -479,7 +438,6 @@ footer {
         suggestionsBox.appendChild(div);
       });
     });
-
     // Đóng hộp gợi ý khi click ra ngoài
     document.addEventListener('click', (e) => {
       if (!searchContainer.contains(e.target)) {
@@ -488,8 +446,5 @@ footer {
       }
     });
   </script>
-  
-  
-  
 </body>
 </html>
